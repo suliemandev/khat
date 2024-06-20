@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Illuminate\Support\Facades\Blade;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -15,6 +18,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function boot()
     {
+        \Outl1ne\NovaSettings\NovaSettings::addSettingsFields([
+            Text::make('Some setting', 'some_setting'),
+            Number::make('A number', 'a_number'),
+        ]);
+
+        Nova::footer(function ($request) {
+            return '';
+            return Blade::render('');
+        });
+
         parent::boot();
     }
 
@@ -41,6 +54,8 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function gate()
     {
         Gate::define('viewNova', function ($user) {
+            return true;
+            
             return in_array($user->email, [
                 //
             ]);
@@ -66,7 +81,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            \Outl1ne\MenuBuilder\MenuBuilder::make()
+                    ->title('Menus')
+                    ->icon('adjustments') // Customize menu icon, supports heroicons
+                    ->hideMenu(false),
+
+            \Outl1ne\NovaSettings\NovaSettings::make(),
+        ];
     }
 
     /**
