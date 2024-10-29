@@ -19,7 +19,9 @@
         <div class="flex max-w-6xl mx-auto w-full">
             <div class="p-6 sticky top-0 overflow-auto max-h-screen">
                 <div class="w-[220px] sticky top-6">
-                    <img class="" src="/imgs/logo.png">
+                    <a href="/">
+                        <img class="" src="/imgs/logo.png">
+                    </a>
                     <div class="mt-6 flex flex-col gap-3">
                         @foreach($header['menuItems'] as $item)
                             <a href="{{ $item['value'] }}">{{ $item['name'] }}</a>
