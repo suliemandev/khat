@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Khat</title>
+
         @vite('resources/css/app.css')
 
         @php
@@ -74,7 +75,7 @@
                             </div>
                         </div>
                         
-                        <div class="h-[3000px] flex gap-4 items-start">
+                        <div class="flex gap-4 items-start">
                             @foreach($filmCategory->articles as $article)
                                 <div class="border border-stone-200 mb-4 w-1/2">
                                     <img src="/storage/{{ $article->image }}">
@@ -100,7 +101,7 @@
                             </div>
                         </div>
                         
-                        <div class="h-[3000px] flex gap-4 items-start">
+                        <div class="flex gap-4 items-start">
                             @foreach($archiveCategory->articles as $article)
                                 <div class="border border-stone-200 mb-4 w-1/2">
                                     <img src="/storage/{{ $article->image }}">
