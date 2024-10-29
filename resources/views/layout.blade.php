@@ -78,7 +78,7 @@
                         <div class="flex gap-4 items-start">
                             @foreach($filmCategory->articles as $article)
                                 <div class="border border-stone-200 mb-4 w-1/2">
-                                    <img src="/storage/{{ $article->image }}">
+                                    <img class="h-[300px] object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
                                         <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
                                             {{ $article->title }}
@@ -104,7 +104,7 @@
                         <div class="flex gap-4 items-start">
                             @foreach($archiveCategory->articles as $article)
                                 <div class="border border-stone-200 mb-4 w-1/2">
-                                    <img src="/storage/{{ $article->image }}">
+                                    <img class="h-[300px] object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
                                         <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
                                             {{ $article->title }}
