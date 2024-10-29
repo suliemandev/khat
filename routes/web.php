@@ -13,6 +13,6 @@ Route::get('/articles/{slug}', function ($slug) {
 
 Route::get('/categories/{slug}', function ($slug) {
     $category = \App\Models\Category::where('slug', $slug)->firstOrFail();
-    $articles = $category->articles()->paginate(10);
+    $articles = $category->articles()->paginate(15);
     return view('category')->with(['category' => $category, 'articles' => $articles]);
 });
