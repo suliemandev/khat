@@ -13,11 +13,11 @@
             $footer = $menus->where('slug', 'footer')->first();
 
             $filmCategory = \App\Models\Category::where('slug', 'film')->with(['articles' => function ($query) {
-                $query->latest()->take(5);
+                $query->latest()->take(2);
             }])->first();
 
             $archiveCategory = \App\Models\Category::where('slug', 'archive')->with(['articles' => function ($query) {
-                $query->latest()->take(5);
+                $query->latest()->take(2);
             }])->first();
         @endphp
     </head>
