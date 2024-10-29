@@ -54,7 +54,12 @@ class Category extends Resource
                 ->maxlength(200)
                 ->alwaysShow()
                 ->rows(2),
-                
+
+            Fields\Textarea::make(__('Icon'), 'icon')
+                ->maxlength(200)
+                ->alwaysShow()
+                ->rows(2),
+
             new Panel(__('Search Engine Optimization'), [
                 Fields\Text::make(__('Meta Title'), 'meta_title')
                     ->maxlength(60),
