@@ -40,12 +40,12 @@
     </div>
 
     @if($filmCategory)
-        <div class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
+        <a href="/categories/{{ $filmCategory->slug }}" class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
             {!! $filmCategory->icon !!}
             <div class="text-5xl mt-2 inline-flex px-2 py-0.5 aref-ruqaa-bold font-bold">
                 {{ $filmCategory->title }}
             </div>
-        </div>
+        </a>
         
         <div class="flex gap-4 items-start">
             @foreach($filmCategory->articles as $article)
@@ -66,12 +66,12 @@
 
 
     @if($archiveCategory)
-        <div class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
+        <a href="/categories/{{ $archiveCategory->slug }}" class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
             {!! $archiveCategory->icon !!}
             <div class="text-5xl mt-2 inline-flex px-2 py-0.5 aref-ruqaa-bold font-bold">
                 {{ $archiveCategory->title }}
             </div>
-        </div>
+        </a>
         
         <div class="flex gap-4 items-start">
             @foreach($archiveCategory->articles as $article)
