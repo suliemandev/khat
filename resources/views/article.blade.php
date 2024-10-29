@@ -4,7 +4,7 @@
         {{ $article->title }}
     </div>
     @if($article->image)
-        <img class="w-full" src="/storage/{{ $article->image }}">
+        <img class="w-full mb-3" src="/storage/{{ $article->image }}">
     @endif
     <div>
         {!! $article->content !!}
