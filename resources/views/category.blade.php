@@ -7,17 +7,19 @@
     <div class="flex flex-col gap-3">
         @foreach($articles as $article)
             <a href="/articles/{{ $article->slug }}" class="border p-4 flex gap-3">
-                @if($article->image)
-                    <img class="w-[200px]" src="{{ $article->image }}">
+                <!-- @if($article->image)
+                    <img class="w-[200px]" src="/storage/{{ $article->image }}">
                 @else
                     <div class="w-[200px]"></div>
-                @endif
+                @endif -->
 
                 <h2 class="text-2xl font-bold">{{ $article->title }}</h2>
             </a>
         @endforeach
     </div>
 
-    {{ $articles->links() }}
+    <div class="flex items-center">
+        {{ $articles->links() }}
+    </div>
 </x-layout>
 
