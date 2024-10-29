@@ -81,7 +81,7 @@
                                     <img class="h-[300px] w-full object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
                                         <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
-                                            {{ str()->limit($article->title, 100) }}
+                                            {{ str()->limit($article->title, 40) }}
                                         </div>
                                         <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
                                             {{ $article->category->title }}
@@ -107,7 +107,7 @@
                                     <img class="h-[300px] w-full object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
                                         <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
-                                            {{ str()->limit($article->title, 100) }}
+                                            {{ str()->limit($article->title, 40) }}
                                         </div>
                                         <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
                                             {{ $article->category->title }}
