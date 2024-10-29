@@ -121,7 +121,7 @@
                     <div class="border border-stone-200 p-10 mb-4 relative items-center justify-center flex flex-col gap-6">
                         <h3 class="aref-ruqaa-bold text-4xl">اكتبوا لنا</h3>
                         <div class="flex gap-3">
-                            <input type="" name="" class="border border-stone h-9 w-full max-w-sm px-5" placeholder="emai@email.com">
+                            <input type="" name="" class="border border-stone h-9 w-full max-w-sm px-5" placeholder="email@email.com">
                             <button class="bg-[#4a6049] text-white px-8 py-1">ارسل</button>
                         </div>
                     </div>
