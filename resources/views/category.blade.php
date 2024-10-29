@@ -18,7 +18,7 @@
         @endforeach
     </div>
 
-    <div class="flex items-center">
+    <div class="flex items-center justify-center mt-6">
         {{ $articles->links() }}
     </div>
 </x-layout>
