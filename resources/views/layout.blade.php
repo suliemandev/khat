@@ -80,7 +80,7 @@
                                 <div class="border border-stone-200 mb-4 w-1/2">
                                     <img class="h-[300px] object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
-                                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
+                                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6 line-clamp-2">
                                             {{ $article->title }}
                                         </div>
                                         <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
@@ -106,7 +106,7 @@
                                 <div class="border border-stone-200 mb-4 w-1/2">
                                     <img class="h-[300px] object-cover" src="/storage/{{ $article->image }}">
                                     <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
-                                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
+                                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6 line-clamp-2">
                                             {{ $article->title }}
                                         </div>
                                         <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
@@ -118,6 +118,11 @@
                         </div>
                     @endif
 
+                    <div class="border border-stone-200 p-10 mb-4 relative items-center justify-center flex flex-col">
+                        <h3 class="aref-ruqaa-bold text-4xl">اكتبوا لنا</h3>
+                        <input type="" name="" class="border border-stone h-9 w-full max-w-sm" placeholder="emai@email.com">
+                        <button class="bg-[#ecdcc8] px-8 py-1">ارسل</button>
+                    </div>
                 </div>
             </di>
         </div>
