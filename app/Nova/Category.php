@@ -71,7 +71,8 @@ class Category extends Resource
             ]),
 
             new Panel(__('Publish'), [
-                Fields\Boolean::make(__('Active'), 'is_active')
+                Fields\Boolean::make(__('Active'), 'is_active'),
+                Fields\Boolean::make(__('Featured'), 'featured')
             ]),
 
             Fields\HasMany::make(__('Articles'), 'articles', Article::class),
