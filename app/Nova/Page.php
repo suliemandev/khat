@@ -67,6 +67,11 @@ class Page extends Resource
                     ->rows(2),
             ]),
 
+            Fields\Textarea::make(__('Summary'), 'summary')
+                ->maxlength(160)
+                ->alwaysShow()
+                ->rows(2),
+
             new Panel(__('Contents'), [
                 Tiptap::make(__('Content'), 'content')
                   ->buttons([
