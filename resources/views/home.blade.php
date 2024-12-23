@@ -8,6 +8,8 @@
     }])->first();
 
 
+    $aboutPage = \App\Models\Page::where('slug', 'about')->first();
+
     $categories = \App\Models\Category::where('featured', true)->get();
 @endphp
 
@@ -21,8 +23,8 @@
         </div>
 
         <div class="mt-4 flex flex-col gap-3 items-end">
-            هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم لأنها تعطي توزيعاَ طبيعياَ -إلى حد ما- للأحرف عوضاً عن استخدام "هنا يوجد محتوى نصي، هنا يوجد محتوى نصي" فتجعلها تبدو (أي الأحرف) وكأنها نص مقروء.
-            <a href="#" class="bg-[#4a6049] hover:bg-[#4a6049]/80 text-white px-4 py-1">
+            {{ $aboutPage->summary }}
+            <a href="/about" class="bg-[#4a6049] hover:bg-[#4a6049]/80 text-white px-4 py-1">
                 المزيد
             </a>
         </div>

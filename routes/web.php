@@ -16,3 +16,8 @@ Route::get('/categories/{slug}', function ($slug) {
     $articles = $category->articles()->paginate(15);
     return view('category')->with(['category' => $category, 'articles' => $articles]);
 });
+
+Route::get('/{slug}', function ($slug) {
+    $article = \App\Models\Page::where('slug', $slug)->firstOrFail();
+    return view('page')->with(['page' => $page]);
+});
