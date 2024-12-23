@@ -5,6 +5,8 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Manogi\Tiptap\Tiptap;
+use Laravel\Nova\Panel;
 
 class Page extends Resource
 {
