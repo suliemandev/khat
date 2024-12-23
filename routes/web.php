@@ -18,6 +18,6 @@ Route::get('/categories/{slug}', function ($slug) {
 });
 
 Route::get('/{slug}', function ($slug) {
-    $article = \App\Models\Page::where('slug', $slug)->firstOrFail();
+    $page = \App\Models\Page::where('slug', $slug)->firstOrFail();
     return view('page')->with(['page' => $page]);
 });
