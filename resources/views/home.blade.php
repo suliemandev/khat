@@ -1,18 +1,9 @@
 @php
-    $filmCategory = \App\Models\Category::where('slug', 'film')->with(['articles' => function ($query) {
-        $query->latest()->take(2);
-    }])->first();
-
-    $archiveCategory = \App\Models\Category::where('slug', 'archive')->with(['articles' => function ($query) {
-        $query->latest()->take(2);
-    }])->first();
-
-
     $aboutPage = \App\Models\Page::where('slug', 'about')->first();
 
     $categories = \App\Models\Category::where('featured', true)
                     ->with(['articles' => function ($query) {
-                        $query->latest()->take(3);
+                        $query->latest()->take(2);
                     }])->get();
 @endphp
 
@@ -46,58 +37,6 @@
             </a>
         </div>
     </div>
-
-    {{-- @if($filmCategory)
-        <a href="/categories/{{ $filmCategory->slug }}" class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
-            {!! $filmCategory->icon !!}
-            <div class="text-5xl mt-2 inline-flex px-2 py-0.5 aref-ruqaa-bold font-bold">
-                {{ $filmCategory->title }}
-            </div>
-        </a>
-        
-        <div class="flex gap-4 items-start">
-            @foreach($filmCategory->articles as $article)
-                <a href="/articles/{{ $article->slug }}" class="border border-stone-200 mb-4 w-1/2">
-                    <img class="h-[300px] w-full object-cover" src="/storage/{{ $article->image }}">
-                    <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
-                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
-                            {{ str()->limit($article->title, 35) }}
-                        </div>
-                        <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
-                            {{ $article->category->title }}
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    @endif
-
-
-    @if($archiveCategory)
-        <a href="/categories/{{ $archiveCategory->slug }}" class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
-            {!! $archiveCategory->icon !!}
-            <div class="text-5xl mt-2 inline-flex px-2 py-0.5 aref-ruqaa-bold font-bold">
-                {{ $archiveCategory->title }}
-            </div>
-        </a>
-        
-        <div class="flex gap-4 items-start">
-            @foreach($archiveCategory->articles as $article)
-                <a href="/articles/{{ $article->slug }}" class="border border-stone-200 mb-4 w-1/2">
-                    <img class="h-[300px] w-full object-cover" src="/storage/{{ $article->image }}">
-                    <div class="text-[#4a6049] flex flex-col items-start gap-2 aref-ruqaa-bold p-4">
-                        <div class="text-5xl leading-[60px] text-white bg-[#4a6049] px-2 py-2 pb-6">
-                            {{ str()->limit($article->title, 35) }}
-                        </div>
-                        <div class="inline-flex mt-2 inline-flex px-2 py-0.5 text-stone-100 text-sm font-vazirmatn-bold bg-[#4a6049]">
-                            {{ $article->category->title }}
-                        </div>
-                    </div>
-                </a>
-            @endforeach
-        </div>
-    @endif --}}
-
 
     @foreach($categories as $category)
         <a href="/categories/{{ $category->slug }}" class="text-[#4a6049] flex items-start gap-2 aref-ruqaa-bold p-4">
