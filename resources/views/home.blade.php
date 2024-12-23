@@ -10,7 +10,10 @@
 
     $aboutPage = \App\Models\Page::where('slug', 'about')->first();
 
-    $categories = \App\Models\Category::where('featured', true)->get();
+    $categories = \App\Models\Category::where('featured', true)
+                    ->with(['articles' => function ($query) {
+                        $query->latest()->take(3);
+                    }])->get();
 @endphp
 
 <x-layout>
