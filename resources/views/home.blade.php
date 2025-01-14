@@ -3,7 +3,7 @@
 
     $categories = \App\Models\Category::where('featured', true)
                     ->with(['articles' => function ($query) {
-                        $query->latest()->take(2);
+                        $query->orderBy('publish_date', 'desc')->take(2);
                     }])->get();
 @endphp
 
